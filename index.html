@@ -8,9 +8,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="Laralink">
   <!-- Page Title -->
-  <title>Jayakrishna - Personal Portfolio</title>
+  <title>Jayakrishna - Modern Portfolio</title>
   <!-- Favicon Icon -->
   <link rel="icon" href="assets/img/blog/Stone Castle - Medieval Sword.png" />
+  <!-- Modern Design Enhancements -->
+  <style>
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-primary);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--gradient-primary);
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--gradient-secondary);
+    }
+    
+    /* Selection styling */
+    ::selection {
+      background: var(--gradient-primary);
+      color: white;
+    }
+    
+    /* Modern card effects */
+    .modern-card {
+      background: var(--gradient-card);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      transition: all 0.3s ease;
+    }
+    
+    .modern-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-strong);
+    }
+    
+    /* Floating elements */
+    .floating {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .floating:nth-child(2) {
+      animation-delay: 2s;
+    }
+    
+    .floating:nth-child(3) {
+      animation-delay: 4s;
+    }
+  </style>
   <!-- Stylesheets -->
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
   <link rel="stylesheet" href="assets/css/fontawesome.css" />
@@ -68,9 +118,10 @@
           <h3>Hello, I’m</h3>
           <h1>Jaya <br>Krishna
           </h1>
-          <h2>Web Developer</h2>
+          <h2>Full Stack Developer & UI/UX Enthusiast</h2>
           <div class="st-hero-btn">
-            <a href="#contact" class="st-btn st-style1 st-color1 st-smooth-move">Hire me</a>
+            <a href="#contact" class="st-btn st-style1 st-color1 st-smooth-move">Let's Collaborate</a>
+            <a href="#portfolio" class="st-btn st-style2 st-color1 st-smooth-move" style="margin-left: 1rem;">View Work</a>
           </div>
         </div>
       </div>
@@ -97,6 +148,67 @@
       </div>
     </div>
     <div id="particles-js"></div>
+    
+    <!-- Modern Floating Elements -->
+    <div class="modern-floating-elements">
+      <div class="floating-shape floating-shape-1"></div>
+      <div class="floating-shape floating-shape-2"></div>
+      <div class="floating-shape floating-shape-3"></div>
+      <div class="floating-shape floating-shape-4"></div>
+    </div>
+    
+    <style>
+      .modern-floating-elements {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      
+      .floating-shape {
+        position: absolute;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+        animation: float 15s ease-in-out infinite;
+      }
+      
+      .floating-shape-1 {
+        width: 80px;
+        height: 80px;
+        top: 20%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+      
+      .floating-shape-2 {
+        width: 120px;
+        height: 120px;
+        top: 60%;
+        right: 15%;
+        animation-delay: 5s;
+        background: linear-gradient(135deg, rgba(240, 147, 251, 0.1), rgba(245, 87, 108, 0.1));
+      }
+      
+      .floating-shape-3 {
+        width: 60px;
+        height: 60px;
+        top: 80%;
+        left: 20%;
+        animation-delay: 10s;
+        background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(0, 242, 254, 0.1));
+      }
+      
+      .floating-shape-4 {
+        width: 100px;
+        height: 100px;
+        top: 30%;
+        right: 25%;
+        animation-delay: 7s;
+      }
+    </style>
   </section>
   <!-- End Hero Seciton -->
 
@@ -123,11 +235,9 @@
             <div class="st-vertical-middle-in">
               <div class="st-text-block st-style1">
                 <h2 class="st-text-block-title">Hi There! I'm Jaya Krishna</h2>
-                <h4 class="st-text-block-subtitle">Web Developer</h4>
+                <h4 class="st-text-block-subtitle">Full Stack Developer & Digital Innovator</h4>
                 <div class="st-text-block-text">
-                  <p>I am a Web Developer with a passion for creating interactive and dynamic digital experiences.
-                    Web development is more than just writing code; it's about crafting functional,
-                    user-friendly websites that leave a lasting impression.</p>
+                                      <p>I am a passionate Full Stack Developer who specializes in creating innovative digital experiences. With expertise in modern web technologies, I transform ideas into elegant, responsive, and user-centric solutions that make a lasting impact.</p>
                 </div>
                 <ul class="st-text-block-details st-mp0">
                   <li><span>Birthday</span> : <span>March 12, 2003</span></li>
