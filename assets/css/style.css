@@ -1,11 +1,13 @@
 /**
- Theme Name: Davis
- Author: Laralink
- Version: 1.0.0
+ Theme Name: Davis - Modern Edition
+ Author: Jayakrishna (Updated by AI Assistant)
+ Version: 2.0.0
  */
 /*Google Fonts*/
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
 /*--------------------------------------------------------------
 >> TABLE OF CONTENTS:
 ----------------------------------------------------------------
@@ -34,71 +36,179 @@
 23. Footer
 
 --------------------------------------------------------------*/
+
 /*--------------------------------------------------------------
 1. Typography
 ----------------------------------------------------------------*/
+:root {
+  /* Modern Color Palette */
+  --primary-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --secondary-bg: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --tertiary-bg: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --dark-bg: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  --light-bg: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  
+  /* Solid Colors */
+  --primary-color: #6c5ce7;
+  --secondary-color: #fd79a8;
+  --tertiary-color: #00cec9;
+  --accent-color: #e17055;
+  --success-color: #00b894;
+  --warning-color: #fdcb6e;
+  --danger-color: #e84393;
+  
+  /* Text Colors */
+  --text-primary: #2d3436;
+  --text-secondary: #636e72;
+  --text-light: #ddd6fe;
+  --text-white: #ffffff;
+  
+  /* Background Colors */
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-card: rgba(255, 255, 255, 0.05);
+  --bg-glass: rgba(255, 255, 255, 0.1);
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gradient-tertiary: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --gradient-card: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  
+  /* Shadow */
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.1);
+  --shadow-medium: 0 20px 60px rgba(0,0,0,0.15);
+  --shadow-strong: 0 30px 80px rgba(0,0,0,0.2);
+  --shadow-glow: 0 0 30px rgba(102, 126, 234, 0.3);
+}
+
 body,
 html {
-  color: #a9adb8;
-  background-color: #0a101e;
+  color: var(--text-light);
+  background: var(--bg-primary);
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.6em;
+  line-height: 1.7em;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Animated background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  opacity: 0.05;
+  z-index: -1;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background: var(--gradient-primary); }
+  25% { background: var(--gradient-secondary); }
+  50% { background: var(--gradient-tertiary); }
+  75% { background: var(--gradient-secondary); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
 
 h1,
 h2,
 h3,
 h4,
-h3,
+h5,
 h6 {
   clear: both;
-  color: #fdfeff;
+  color: var(--text-white);
   padding: 0;
-  margin: 0 0 10px 0;
+  margin: 0 0 15px 0;
   font-weight: 700;
-  line-height: 1.2em;
+  line-height: 1.3em;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 3.5rem;
+  font-weight: 800;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 h2 {
-  font-size: 34px;
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
 h3 {
-  font-size: 26px;
+  font-size: 1.8rem;
+  font-weight: 600;
 }
 
 h4 {
-  font-size: 22px;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
 h5 {
-  font-size: 18px;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 
 h6 {
-  font-size: 15px;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 p {
-  margin-bottom: 12px;
+  margin-bottom: 1.2rem;
+  color: var(--text-light);
+  font-weight: 400;
 }
 
 ul {
-  margin: 0 0 15px 0;
-  padding-left: 15px;
-  list-style: square outside none;
+  margin: 0 0 20px 0;
+  padding-left: 20px;
+  list-style: none;
+}
+
+ul li::before {
+  content: "▶";
+  color: var(--primary-color);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
 
 ol {
-  padding-left: 15px;
-  margin-bottom: 15px;
+  padding-left: 20px;
+  margin-bottom: 20px;
 }
 
 dfn,
@@ -109,33 +219,54 @@ i {
 }
 
 blockquote {
-  margin: 0 15px;
+  margin: 0 20px;
+  padding: 20px;
+  border-left: 4px solid var(--primary-color);
+  background: var(--bg-glass);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
 }
 
 address {
-  margin: 0 0 15px;
+  margin: 0 0 20px;
 }
 
 img {
   border: 0;
   max-width: 100%;
   height: auto;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-medium);
 }
 
 a {
   color: inherit;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 a:hover {
   text-decoration: none;
-  color: inherit;
+  color: var(--primary-color);
+  transform: translateY(-2px);
 }
 
 @media screen and (max-width: 991px) {
   body, html {
     font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
   }
 }
 
@@ -477,11 +608,13 @@ a:hover {
 }
 
 .st-dark-bg {
-  background-color: #070d1b;
+  background: var(--gradient-card);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .st-gray-bg {
-  background-color: #b8b8b8;
+  background: var(--gradient-secondary);
 }
 
 .st-gray-overlay {
@@ -526,11 +659,13 @@ hr {
 5. Header
 ----------------------------------------------------------------*/
 .st-site-header.st-style1 {
-  background-color: rgba(7, 13, 27, 0.9);
-  -webkit-box-shadow: 0 10px 10px -10px rgba(7, 13, 27, 0.1);
-          box-shadow: 0 10px 10px -10px rgba(7, 13, 27, 0.1);
+  background: rgba(26, 26, 46, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+          box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .st-site-header.st-style1 .st-main-header-in {
@@ -608,7 +743,11 @@ hr {
     font-weight: 500;
   }
   .st-nav .st-nav-list > li > a.active {
-    color: #fec544;
+    color: var(--primary-color);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   .st-nav .sp-phone {
     display: -webkit-box;
@@ -633,9 +772,10 @@ hr {
     width: 15px;
   }
   .st-nav .sp-phone .sp-phone-no {
-    padding-left: 15px;
-    color: #fec544;
-  }
+      padding-left: 15px;
+      color: var(--primary-color);
+      font-weight: 600;
+    }
   .st-munu-toggle,
   .st-munu-dropdown-toggle {
     display: none;
@@ -917,8 +1057,9 @@ hr {
 ---------------------------------------------------------------*/
 .st-hero-wrap {
   position: relative;
-  height: 850px;
-  background-color: #070d1b;
+  height: 100vh;
+  background: var(--bg-primary);
+  overflow: hidden;
 }
 
 .st-hero-wrap img {
@@ -956,31 +1097,41 @@ hr {
 }
 
 .st-hero.st-style1 .st-hero-text h1 {
-  font-size: 120px;
+  font-size: 5rem;
   margin-bottom: 24px;
   font-weight: 900;
-  color: #fdfeff;
-  line-height: 1;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  animation: fadeInUp 1s ease-out;
 }
 
 .st-hero.st-style1 .st-hero-text h2 {
-  font-size: 36px;
+  font-size: 2.2rem;
   margin-bottom: 41px;
   font-weight: 300;
-  color: #a9adb8;
+  color: var(--text-light);
+  animation: fadeInUp 1s ease-out 0.2s both;
 }
 
 .st-hero.st-style1 .st-hero-text h3 {
-  font-size: 30px;
+  font-size: 1.8rem;
   margin-top: -6px;
   margin-bottom: 10px;
-  font-weight: 300;
-  color: #fec544;
+  font-weight: 400;
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: fadeInUp 1s ease-out 0.4s both;
 }
 
 .st-social-group {
-  background-color: #101624;
-  border: 1px solid #232935;
+  background: var(--gradient-card);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-right: 0;
   border-radius: 50px 0 0 50px;
   height: 80px;
@@ -995,6 +1146,8 @@ hr {
   bottom: 30px;
   padding-left: 12px;
   right: 100%;
+  box-shadow: var(--shadow-medium);
+  animation: float 3s ease-in-out infinite;
 }
 
 .st-hero.st-style2 {
@@ -1155,8 +1308,10 @@ canvas {
 
 /* ANIMATIONS */
 .x1 {
-  -webkit-animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
-          animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  -webkit-animation: animateBubble 25s linear infinite,
+ sideWays 2s ease-in-out infinite alternate;
+          animation: animateBubble 25s linear infinite,
+ sideWays 2s ease-in-out infinite alternate;
   left: -5%;
   top: 5%;
   -webkit-transform: scale(0.6);
@@ -1164,8 +1319,10 @@ canvas {
 }
 
 .x2 {
-  -webkit-animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
-          animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  -webkit-animation: animateBubble 20s linear infinite,
+ sideWays 4s ease-in-out infinite alternate;
+          animation: animateBubble 20s linear infinite,
+ sideWays 4s ease-in-out infinite alternate;
   left: 5%;
   top: 80%;
   -webkit-transform: scale(0.4);
@@ -1173,8 +1330,10 @@ canvas {
 }
 
 .x3 {
-  -webkit-animation: animateBubble 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
-          animation: animateBubble 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  -webkit-animation: animateBubble 28s linear infinite,
+ sideWays 2s ease-in-out infinite alternate;
+          animation: animateBubble 28s linear infinite,
+ sideWays 2s ease-in-out infinite alternate;
   left: 10%;
   top: 40%;
   -webkit-transform: scale(0.7);
@@ -1182,8 +1341,10 @@ canvas {
 }
 
 .x4 {
-  -webkit-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
-          animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+  -webkit-animation: animateBubble 22s linear infinite,
+ sideWays 3s ease-in-out infinite alternate;
+          animation: animateBubble 22s linear infinite,
+ sideWays 3s ease-in-out infinite alternate;
   left: 20%;
   top: 0;
   -webkit-transform: scale(0.3);
@@ -1191,8 +1352,10 @@ canvas {
 }
 
 .x5 {
-  -webkit-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
-          animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  -webkit-animation: animateBubble 29s linear infinite,
+ sideWays 4s ease-in-out infinite alternate;
+          animation: animateBubble 29s linear infinite,
+ sideWays 4s ease-in-out infinite alternate;
   left: 30%;
   top: 50%;
   -webkit-transform: scale(0.5);
@@ -1200,8 +1363,10 @@ canvas {
 }
 
 .x6 {
-  -webkit-animation: animateBubble 21s linear infinite, sideWays 2s ease-in-out infinite alternate;
-          animation: animateBubble 21s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  -webkit-animation: animateBubble 21s linear infinite,
+ sideWays 2s ease-in-out infinite alternate;
+          animation: animateBubble 21s linear infinite,
+ sideWays 2s ease-in-out infinite alternate;
   left: 50%;
   top: 0;
   -webkit-transform: scale(0.8);
@@ -1209,8 +1374,10 @@ canvas {
 }
 
 .x7 {
-  -webkit-animation: animateBubble 20s linear infinite, sideWays 2s ease-in-out infinite alternate;
-          animation: animateBubble 20s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  -webkit-animation: animateBubble 20s linear infinite,
+ sideWays 2s ease-in-out infinite alternate;
+          animation: animateBubble 20s linear infinite,
+ sideWays 2s ease-in-out infinite alternate;
   left: 65%;
   top: 70%;
   -webkit-transform: scale(0.4);
@@ -1218,8 +1385,10 @@ canvas {
 }
 
 .x8 {
-  -webkit-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
-          animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+  -webkit-animation: animateBubble 22s linear infinite,
+ sideWays 3s ease-in-out infinite alternate;
+          animation: animateBubble 22s linear infinite,
+ sideWays 3s ease-in-out infinite alternate;
   left: 80%;
   top: 10%;
   -webkit-transform: scale(0.3);
@@ -1227,8 +1396,10 @@ canvas {
 }
 
 .x9 {
-  -webkit-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
-          animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+  -webkit-animation: animateBubble 29s linear infinite,
+ sideWays 4s ease-in-out infinite alternate;
+          animation: animateBubble 29s linear infinite,
+ sideWays 4s ease-in-out infinite alternate;
   left: 90%;
   top: 50%;
   -webkit-transform: scale(0.6);
@@ -1236,8 +1407,10 @@ canvas {
 }
 
 .x10 {
-  -webkit-animation: animateBubble 26s linear infinite, sideWays 2s ease-in-out infinite alternate;
-          animation: animateBubble 26s linear infinite, sideWays 2s ease-in-out infinite alternate;
+  -webkit-animation: animateBubble 26s linear infinite,
+ sideWays 2s ease-in-out infinite alternate;
+          animation: animateBubble 26s linear infinite,
+ sideWays 2s ease-in-out infinite alternate;
   left: 80%;
   top: 80%;
   -webkit-transform: scale(0.3);
@@ -1337,15 +1510,33 @@ canvas {
 
 .st-btn.st-style1:hover,
 .st-btn.st-style2:hover {
-  -webkit-transform: translateY(-1px);
-          transform: translateY(-1px);
-  -webkit-box-shadow: 0px 5px 10px 0px #fec64450;
-          box-shadow: 0px 5px 10px 0px #fec64450;
+  -webkit-transform: translateY(-3px) scale(1.02);
+          transform: translateY(-3px) scale(1.02);
+  -webkit-box-shadow: var(--shadow-strong);
+          box-shadow: var(--shadow-strong);
 }
 
 .st-btn.st-style1.st-color1 {
-  background-color: #fec544;
-  color: #070d1b;
+  background: var(--gradient-primary);
+  color: var(--text-white);
+  box-shadow: var(--shadow-glow);
+  position: relative;
+  overflow: hidden;
+}
+
+.st-btn.st-style1.st-color1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.st-btn.st-style1.st-color1:hover::before {
+  left: 100%;
 }
 
 .st-btn.st-style1.st-color2 {
@@ -1370,13 +1561,31 @@ canvas {
 
 .st-btn.st-style2.st-color1 {
   background-color: transparent;
-  border-color: #fec544;
-  color: #fec544;
+  border: 2px solid transparent;
+  background-image: var(--gradient-primary);
+  background-clip: padding-box;
+  color: var(--primary-color);
+  position: relative;
+}
+
+.st-btn.st-style2.st-color1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-primary);
+  border-radius: inherit;
+  padding: 2px;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
 }
 
 .st-btn.st-style2.st-color1:hover {
-  background-color: #fec544;
-  color: #070d1b;
+  background: var(--gradient-primary);
+  color: var(--text-white);
+  transform: translateY(-3px) scale(1.02);
 }
 
 .st-btn.st-size-medium {
@@ -1416,37 +1625,43 @@ canvas {
 }
 
 .st-section-heading.st-style1 .st-section-heading-title {
-  font-size: 24px;
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 600;
   text-transform: uppercase;
-  color: #fec544;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   position: relative;
   z-index: 10;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 .st-section-heading.st-style1 .st-section-heading-title::before {
   content: "";
   position: absolute;
-  background-color: #3f4551;
+  background: rgba(255, 255, 255, 0.2);
   width: 170px;
-  height: 2px;
+  height: 3px;
   bottom: -16px;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  border-radius: 2px;
 }
 
 .st-section-heading.st-style1 .st-section-heading-title::after {
   content: "";
   position: absolute;
-  background-color: #fec544;
+  background: var(--gradient-primary);
   width: 70px;
-  height: 2px;
+  height: 3px;
   bottom: -16px;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
 }
 
 .st-section-heading.st-style1 .st-section-heading-subtitle {
@@ -1532,24 +1747,54 @@ canvas {
 ----------------------------------------------------------------*/
 .st-iconbox.st-style1 {
   text-align: center;
-  padding: 50px 30px;
-  border-radius: 3px;
+  padding: 3rem 2rem;
+  border-radius: 20px;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
-  border: 1px solid #232935;
-  background-color: #101624;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--gradient-card);
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+.st-iconbox.st-style1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transition: left 0.5s;
+}
+
+.st-iconbox.st-style1:hover::before {
+  left: 100%;
+}
+
+.st-iconbox.st-style1:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-strong);
+  border-color: var(--primary-color);
 }
 
 .st-iconbox.st-style1:hover .st-iconbox-icon {
-  border: 0.5px solid #fec544;
+  border: 2px solid var(--primary-color);
+  background: var(--gradient-primary);
+  transform: scale(1.1);
+  box-shadow: var(--shadow-glow);
 }
 
 .st-iconbox.st-style1:hover .st-iconbox-icon svg {
-  fill: #fec544;
+  fill: var(--text-white);
 }
 
 .st-iconbox.st-style1:hover .st-iconbox-title {
-  color: #fec544;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .st-iconbox.st-style1 .st-iconbox-icon {
@@ -1562,16 +1807,19 @@ canvas {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 90px;
-  width: 90px;
-  border: 0.5px solid #3f4551;
+  height: 100px;
+  width: 100px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
-  background-color: #070d1b;
+  background: var(--gradient-card);
+  backdrop-filter: blur(10px);
   margin: auto;
   font-size: 50px;
-  margin-bottom: 28px;
+  margin-bottom: 2rem;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
 }
 
 .st-iconbox.st-style1 .st-iconbox-icon svg {
@@ -1633,19 +1881,44 @@ canvas {
 }
 
 .st-progressbar-percentage {
-  color: #fec544;
-  font-weight: 400;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
 }
 
 .st-progressbar {
   width: 100%;
-  height: 2px;
-  background-color: #3f4551;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
 }
 
 .st-progressbar-in {
-  background-color: #fec544;
-  height: 2px;
+  background: var(--gradient-primary);
+  height: 100%;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.st-progressbar-in::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 @media screen and (max-width: 991px) {
